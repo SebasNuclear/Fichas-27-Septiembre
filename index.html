@@ -23,6 +23,7 @@
             background-color: #f1f5f9;
         }
         
+        /* Contenedor de configuración web (se oculta al imprimir) */
         .web-controls {
             background-color: #1e293b;
             color: white;
@@ -69,6 +70,7 @@
             flex-wrap: wrap;
         }
 
+        /* Hoja de Trabajo Principal */
         .page-sheet {
             background-color: #ffffff;
             width: 210mm;
@@ -79,6 +81,7 @@
             border-radius: 4px;
         }
         
+        /* Encabezado */
         .header-table {
             width: 100%;
             border-collapse: collapse;
@@ -143,6 +146,7 @@
             margin: 2px 0 0 0;
         }
 
+        /* Datos Generales */
         .datos-table {
             width: 100%;
             border-collapse: collapse;
@@ -178,6 +182,7 @@
             color: #1e293b;
         }
 
+        /* Sección Enfoque y Escala */
         .meta-section {
             display: table;
             width: 100%;
@@ -241,6 +246,7 @@
             margin: 1px 0 0 14px;
         }
 
+        /* Tabla Principal */
         .main-table {
             width: 100%;
             border-collapse: collapse;
@@ -414,6 +420,7 @@
             margin-top: 4px;
         }
         
+        /* ======== REGLAS MÁGICAS PARA IMPRESIÓN ======== */
         @media print {
             .web-controls {
                 display: none !important;
@@ -434,19 +441,33 @@
             .textarea-mock {
                 border-color: transparent;
             }
-            /* Ocultar icono de calendario al imprimir en navegadores webkit */
+            /* Ocultar icono de calendario al imprimir */
             input[type="date"]::-webkit-calendar-picker-indicator {
                 display: none;
                 -webkit-appearance: none;
+            }
+            /* ESTO EVITA LOS CORTES FEOS A MITAD DE TABLA O CAJAS */
+            tbody {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .columns-container, .full-width-box, .signature-container {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            thead {
+                display: table-header-group;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Cargar bases de datos externas separadas -->
     <script src="data_indicadores.js"></script>
     <script src="data_alumnos.js"></script>
 
+    <!-- Panel de control de la Página Web -->
     <div class="web-controls">
         <div class="controls-wrapper">
             <div>
@@ -473,8 +494,10 @@
         </div>
     </div>
 
+    <!-- Hoja de Trabajo Imprimible -->
     <div class="page-sheet">
         
+        <!-- Encabezado -->
         <table class="header-table">
             <tr>
                 <td class="header-logo-cell">
@@ -490,6 +513,7 @@
             </tr>
         </table>
 
+        <!-- Datos Generales -->
         <table class="datos-table">
             <tr>
                 <td class="label" style="width: 140px;">Nombre del alumno(a):</td>
@@ -503,6 +527,7 @@
             </tr>
         </table>
 
+        <!-- Enfoque y Escala -->
         <div class="meta-section">
             <div class="enfoque-box">
                 <div class="section-mini-title">Enfoque:</div>
@@ -532,16 +557,18 @@
             </div>
         </div>
 
+        <!-- Tabla de Campos Formativos DINÁMICA -->
         <table class="main-table">
             <thead>
                 <tr>
                     <th style="width: 22%;">Campo Formativo</th>
-                    <th style="width: 55%;">Aspectos a valorar / Indicadores</th>
+                    <th style="width: 55%;">Aspecto a valorar / Indicadores</th>
                     <th style="width: 7.6%;">Logrado</th>
                     <th style="width: 7.6%;">En Proceso</th>
                     <th style="width: 7.6%;">Requiere Apoyo</th>
                 </tr>
             </thead>
+            <!-- Los tbody actúan como bloques independientes para que no se corten mal -->
             <tbody id="tbody-lenguajes"></tbody>
             <tbody id="tbody-saberes"></tbody>
             <tbody id="tbody-etica"></tbody>
@@ -549,7 +576,9 @@
             <tbody id="tbody-autonomia"></tbody>
         </table>
 
+        <!-- 3 COLUMNAS EN UNA SOLA FILA: Fortalezas, Aspectos y Familia -->
         <div class="columns-container">
+            <!-- 1. Fortalezas -->
             <div class="column-cell">
                 <div class="column-header bg-fortalezas">★ Fortalezas</div>
                 <div class="column-content">
@@ -570,6 +599,7 @@
             
             <div class="spacer"></div>
             
+            <!-- 2. Aspectos a Fortalecer -->
             <div class="column-cell">
                 <div class="column-header bg-aspectos">🎯 A Fortalecer</div>
                 <div class="column-content">
@@ -590,6 +620,7 @@
 
             <div class="spacer"></div>
 
+            <!-- 3. Familia -->
             <div class="column-cell border-familia">
                 <div class="column-header bg-familia">👨‍👩‍👧‍👦 Para la Familia</div>
                 <div class="column-content">
@@ -602,16 +633,19 @@
             </div>
         </div>
 
+        <!-- Observaciones (Ancho Completo y Más Altura) -->
         <div class="full-width-box">
             <div class="section-mini-title" id="obs-title" style="color:#1e293b;">📝 Observaciones y Recomendaciones para Sexto Grado</div>
             <textarea class="textarea-mock" placeholder="Escriba aquí los comentarios específicos sobre el desempeño del alumno(a)..."></textarea>
         </div>
 
+        <!-- Firma -->
         <div class="signature-container">
             <input type="text" id="inputSignatureName" class="signature-input" placeholder="Nombre de docente" oninput="syncSignatureTeacher(this.value)">
             <div class="signature-text">Nombre y firma de docente</div>
         </div>
 
+        <!-- Perfil de Egreso NEM -->
         <div class="footer-nem-desc">
             <strong id="footer-title">DESCRIPCIÓN DE CIERRE DE CICLO (Sexto Grado - Perfil de Egreso de la NEM):</strong><br>
             <span id="footer-text">Al concluir el sexto grado de primaria, el alumno(a) demuestra avances significativos en el desarrollo integral de los cuatro campos formativos del plan de estudios. Expresa sus ideas, saberes y argumentos con claridad, comprende y valora información relevante desde una mirada analítica, crítica y reflexiva, resuelve retos comunitarios con autonomía, interactúa bajo principios éticos, de empatía y de profundo respeto, participando activamente en su comunidad y reconociéndose plenamente como ciudadano(a) de una sociedad justa, democrática e incluyente.</span>
@@ -620,6 +654,7 @@
 
     </div>
 
+    <!-- Script Interactivo -->
     <script>
         function updateAll() {
             changeGradeUI();
@@ -631,6 +666,7 @@
             var select = document.getElementById("gradeSelect");
             var selectedValue = select.value;
             
+            // Verificación segura por si los datos no cargaron
             if(typeof gradeDetailsDB === 'undefined' || !gradeDetailsDB[selectedValue]) return;
             var details = gradeDetailsDB[selectedValue];
             

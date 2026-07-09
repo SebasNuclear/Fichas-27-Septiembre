@@ -23,12 +23,11 @@
             background-color: #f1f5f9;
         }
         
-        /* Contenedor de configuración web (se oculta al imprimir) */
         .web-controls {
             background-color: #1e293b;
             color: white;
             padding: 12px 20px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-bottom: 4px solid #0f766e;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
@@ -70,7 +69,6 @@
             flex-wrap: wrap;
         }
 
-        /* Hoja de Trabajo Principal */
         .page-sheet {
             background-color: #ffffff;
             width: 210mm;
@@ -81,7 +79,6 @@
             border-radius: 4px;
         }
         
-        /* Encabezado */
         .header-table {
             width: 100%;
             border-collapse: collapse;
@@ -146,7 +143,6 @@
             margin: 2px 0 0 0;
         }
 
-        /* Datos Generales */
         .datos-table {
             width: 100%;
             border-collapse: collapse;
@@ -169,14 +165,19 @@
             font-size: 9.5pt;
             color: #1e293b;
             background-color: #f8fafc;
+            font-family: inherit;
         }
         .input-line:focus {
             outline: none;
             border-bottom: 2px solid #0f766e;
             background-color: #fff;
         }
+        /* Estilo específico para el calendario */
+        input[type="date"].input-line {
+            cursor: pointer;
+            color: #1e293b;
+        }
 
-        /* Sección Enfoque y Escala */
         .meta-section {
             display: table;
             width: 100%;
@@ -240,11 +241,10 @@
             margin: 1px 0 0 14px;
         }
 
-        /* Tabla Principal */
         .main-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .main-table th {
             background-color: #1e293b !important;
@@ -257,7 +257,7 @@
         }
         .main-table td {
             border: 1px solid #cbd5e1;
-            padding: 4px 6px;
+            padding: 3px 6px;
             vertical-align: middle;
         }
         
@@ -279,6 +279,7 @@
         .indicator-text {
             color: #334155;
             font-size: 8.5pt;
+            line-height: 1.1;
         }
         .center-col {
             text-align: center;
@@ -289,7 +290,7 @@
             cursor: pointer;
         }
 
-        /* Fortalezas y Aspectos */
+        /* TRES COLUMNAS EN UNA SOLA FILA */
         .columns-container {
             display: table;
             width: 100%;
@@ -298,50 +299,55 @@
         }
         .column-cell {
             display: table-cell;
-            width: 50%;
+            width: 32.66%;
             vertical-align: top;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
             background-color: #fff;
         }
+        .spacer {
+            display: table-cell;
+            width: 1%;
+        }
         .column-header {
             padding: 5px 8px;
             color: white !important;
             font-weight: bold;
-            font-size: 9pt;
+            font-size: 8.5pt;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             text-transform: uppercase;
+            text-align: center;
         }
         .bg-fortalezas { background-color: #0d9488 !important; }
         .bg-aspectos { background-color: #b91c1c !important; }
+        .bg-familia { background-color: #15803d !important; }
+        .border-familia { border-color: #86efac !important; background-color: #f0fdf4 !important; }
         
         .column-content {
-            padding: 6px;
-        }
-        
-        .check-grid {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .check-grid td {
-            border: none;
-            padding: 2px;
-            font-size: 8pt;
-            vertical-align: top;
+            padding: 5px 6px;
         }
         .check-item {
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
             cursor: pointer;
+            font-size: 7.5pt;
+            line-height: 1.1;
+            color: #1e293b;
         }
         .check-item input {
             margin-right: 4px;
             vertical-align: middle;
             cursor: pointer;
+            transform: scale(0.9);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .check-item span {
+            vertical-align: middle;
         }
 
-        /* Cajas de ancho completo (Recomendaciones Familia & Observaciones) */
+        /* Observaciones a lo ancho completo */
         .full-width-box {
             width: 100%;
             border: 1px solid #cbd5e1;
@@ -350,32 +356,22 @@
             margin-bottom: 12px;
             background-color: #fafafa !important;
         }
-        .fam-box-full {
-            background-color: #f0fdf4 !important;
-        }
-        .fam-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4px;
-            padding-top: 5px;
-        }
-        
         .textarea-mock {
             width: 100%;
-            height: 200px;
+            height: 150px;
             border: 1px dashed #cbd5e1;
             background-color: #fff;
             border-radius: 4px;
             padding: 8px;
             font-family: inherit;
-            font-size: 8.5pt;
+            font-size: 9pt;
             resize: vertical;
             color: #4a5568;
         }
         
         /* Firma */
         .signature-container {
-            margin-top: 15px;
+            margin-top: 10px;
             text-align: center;
         }
         .signature-input {
@@ -390,6 +386,7 @@
             background: transparent;
             margin-bottom: 4px;
             padding: 5px;
+            font-family: inherit;
         }
         .signature-text {
             font-size: 8.5pt;
@@ -399,7 +396,7 @@
 
         /* Footer NEM */
         .footer-nem-desc {
-            margin-top: 10px;
+            margin-top: 8px;
             border-top: 1px solid #e2e8f0;
             padding-top: 6px;
             font-size: 7.5pt;
@@ -437,16 +434,19 @@
             .textarea-mock {
                 border-color: transparent;
             }
+            /* Ocultar icono de calendario al imprimir en navegadores webkit */
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cargar bases de datos externas separadas -->
     <script src="data_indicadores.js"></script>
     <script src="data_alumnos.js"></script>
 
-    <!-- Panel de control de la Página Web -->
     <div class="web-controls">
         <div class="controls-wrapper">
             <div>
@@ -473,10 +473,8 @@
         </div>
     </div>
 
-    <!-- Hoja de Trabajo Imprimible -->
     <div class="page-sheet">
         
-        <!-- Encabezado -->
         <table class="header-table">
             <tr>
                 <td class="header-logo-cell">
@@ -492,7 +490,6 @@
             </tr>
         </table>
 
-        <!-- Datos Generales -->
         <table class="datos-table">
             <tr>
                 <td class="label" style="width: 140px;">Nombre del alumno(a):</td>
@@ -501,12 +498,11 @@
             <tr>
                 <td class="label" style="width: 140px;">Docente:</td>
                 <td><input type="text" id="inputTeacherName" class="input-line" placeholder="Nombre de docente" oninput="syncTeacherSignature(this.value)"></td>
-                <td class="label" style="padding-left:15px; width:50px;">Fecha:</td>
-                <td style="width: 120px;"><input type="text" class="input-line" placeholder="dd/mm/aaaa"></td>
+                <td class="label" style="padding-left:15px; width:60px;">Fecha:</td>
+                <td style="width: 120px;"><input type="date" class="input-line"></td>
             </tr>
         </table>
 
-        <!-- Enfoque y Escala -->
         <div class="meta-section">
             <div class="enfoque-box">
                 <div class="section-mini-title">Enfoque:</div>
@@ -520,28 +516,27 @@
                     <div class="escala-item">
                         <span class="badge badge-logrado"></span>
                         <span class="status-title" style="color: #047857;">Logrado</span>
-                        <div class="status-desc">Lo realiza de manera autónoma y consistente.</div>
+                        <div class="status-desc">Autónomo y consistente.</div>
                     </div>
                     <div class="escala-item">
                         <span class="badge badge-proceso"></span>
                         <span class="status-title" style="color: #b45309;">En proceso</span>
-                        <div class="status-desc">Lo realiza con apoyo o en proceso de logro.</div>
+                        <div class="status-desc">Con apoyo o en proceso.</div>
                     </div>
                     <div class="escala-item">
                         <span class="badge badge-apoyo"></span>
                         <span class="status-title" style="color: #b91c1c;">Requiere apoyo</span>
-                        <div class="status-desc">Necesita acompañamiento continuo.</div>
+                        <div class="status-desc">Acompañamiento continuo.</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Tabla de Campos Formativos DINÁMICA -->
         <table class="main-table">
             <thead>
                 <tr>
                     <th style="width: 22%;">Campo Formativo</th>
-                    <th style="width: 55%;">Aspecto a valorar / Indicadores</th>
+                    <th style="width: 55%;">Aspectos a valorar / Indicadores</th>
                     <th style="width: 7.6%;">Logrado</th>
                     <th style="width: 7.6%;">En Proceso</th>
                     <th style="width: 7.6%;">Requiere Apoyo</th>
@@ -554,88 +549,69 @@
             <tbody id="tbody-autonomia"></tbody>
         </table>
 
-        <!-- Fortalezas y Aspectos -->
         <div class="columns-container">
             <div class="column-cell">
-                <div class="column-header bg-fortalezas">★ Fortalezas del Alumno(a)</div>
+                <div class="column-header bg-fortalezas">★ Fortalezas</div>
                 <div class="column-content">
-                    <table class="check-grid">
-                        <tr>
-                            <td>
-                                <label class="check-item"><input type="checkbox"><span>Participativo(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Responsable</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Respetuoso(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Honesto(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Creativo(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Solidario(a)</span></label>
-                            </td>
-                            <td>
-                                <label class="check-item"><input type="checkbox"><span>Colaborador(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Curioso(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Perseverante</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Buen(a) lector(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Expresivo(a)</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Líder positivo(a)</span></label>
-                            </td>
-                        </tr>
-                    </table>
+                    <label class="check-item"><input type="checkbox"><span>Participativo(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Responsable</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Respetuoso(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Honesto(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Creativo(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Solidario(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Colaborador(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Curioso(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Perseverante</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Buen(a) lector(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Expresivo(a)</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Líder positivo(a)</span></label>
                 </div>
             </div>
             
             <div class="spacer"></div>
             
             <div class="column-cell">
-                <div class="column-header bg-aspectos">🎯 Aspectos a Fortalecer</div>
+                <div class="column-header bg-aspectos">🎯 A Fortalecer</div>
                 <div class="column-content">
-                    <table class="check-grid">
-                        <tr>
-                            <td>
-                                <label class="check-item"><input type="checkbox"><span>Comprensión lectora</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Producción de textos</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Cálculo mental y escrito</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Resolución de problemas</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Expresión oral</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Atención y concentración</span></label>
-                            </td>
-                            <td>
-                                <label class="check-item"><input type="checkbox"><span>Organización y planificación</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Trabajo en equipo</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Manejo de emociones</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Hábitos de estudio</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Autonomía</span></label>
-                                <label class="check-item"><input type="checkbox"><span>Autoevaluación</span></label>
-                            </td>
-                        </tr>
-                    </table>
+                    <label class="check-item"><input type="checkbox"><span>Comprensión lectora</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Producción de textos</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Cálculo mental y escrito</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Resolución de problemas</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Expresión oral</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Atención y concentración</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Organización y planificación</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Trabajo en equipo</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Manejo de emociones</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Hábitos de estudio</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Autonomía</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Autoevaluación</span></label>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="column-cell border-familia">
+                <div class="column-header bg-familia">👨‍👩‍👧‍👦 Para la Familia</div>
+                <div class="column-content">
+                    <label class="check-item"><input type="checkbox"><span>Establecer rutinas de estudio y lectura en casa.</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Fomentar el diálogo, la escucha y el respeto mutuo.</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Acompañar en las tareas con paciencia y apoyo.</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Promover actividades físicas, artísticas y recreativas.</span></label>
+                    <label class="check-item"><input type="checkbox"><span>Reconocer y valorar los logros diarios del alumno(a).</span></label>
                 </div>
             </div>
         </div>
 
-        <!-- Recomendaciones Familia (Ancho Completo) -->
-        <div class="full-width-box fam-box-full">
-            <div class="section-mini-title" style="color:#15803d;">👨‍👩‍👧‍👦 Recomendaciones para la Familia</div>
-            <div class="fam-grid">
-                <label class="check-item"><input type="checkbox"><span style="font-size:8pt;">Establecer rutinas de estudio y lectura en casa.</span></label>
-                <label class="check-item"><input type="checkbox"><span style="font-size:8pt;">Fomentar el diálogo, la escucha y el respeto en el hogar.</span></label>
-                <label class="check-item"><input type="checkbox"><span style="font-size:8pt;">Acompañar en las tareas con paciencia y apoyo formativo positivo.</span></label>
-                <label class="check-item"><input type="checkbox"><span style="font-size:8pt;">Promover actividades físicas, artísticas y recreativas equilibradas.</span></label>
-                <label class="check-item"><input type="checkbox"><span style="font-size:8pt;">Reconocer y valorar los logros y esfuerzos diarios del alumno(a).</span></label>
-            </div>
-        </div>
-
-        <!-- Observaciones (Ancho Completo y Más Altura) -->
         <div class="full-width-box">
             <div class="section-mini-title" id="obs-title" style="color:#1e293b;">📝 Observaciones y Recomendaciones para Sexto Grado</div>
             <textarea class="textarea-mock" placeholder="Escriba aquí los comentarios específicos sobre el desempeño del alumno(a)..."></textarea>
         </div>
 
-        <!-- Firma -->
         <div class="signature-container">
             <input type="text" id="inputSignatureName" class="signature-input" placeholder="Nombre de docente" oninput="syncSignatureTeacher(this.value)">
             <div class="signature-text">Nombre y firma de docente</div>
         </div>
 
-        <!-- Perfil de Egreso NEM -->
         <div class="footer-nem-desc">
             <strong id="footer-title">DESCRIPCIÓN DE CIERRE DE CICLO (Sexto Grado - Perfil de Egreso de la NEM):</strong><br>
             <span id="footer-text">Al concluir el sexto grado de primaria, el alumno(a) demuestra avances significativos en el desarrollo integral de los cuatro campos formativos del plan de estudios. Expresa sus ideas, saberes y argumentos con claridad, comprende y valora información relevante desde una mirada analítica, crítica y reflexiva, resuelve retos comunitarios con autonomía, interactúa bajo principios éticos, de empatía y de profundo respeto, participando activamente en su comunidad y reconociéndose plenamente como ciudadano(a) de una sociedad justa, democrática e incluyente.</span>
@@ -644,7 +620,6 @@
 
     </div>
 
-    <!-- Script Interactivo -->
     <script>
         function updateAll() {
             changeGradeUI();
@@ -656,9 +631,7 @@
             var select = document.getElementById("gradeSelect");
             var selectedValue = select.value;
             
-            // Verificación segura por si los datos no cargaron
             if(typeof gradeDetailsDB === 'undefined' || !gradeDetailsDB[selectedValue]) return;
-            
             var details = gradeDetailsDB[selectedValue];
             
             document.getElementById("main-subtitle").innerText = selectedValue + " Grado de Primaria";

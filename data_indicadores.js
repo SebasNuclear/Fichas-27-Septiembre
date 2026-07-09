@@ -1,0 +1,73 @@
+// Base de datos de Indicadores por Grado
+const indicatorsDB = {
+    "Primer": {
+        "lenguajes": ["Reconoce las letras del alfabeto", "Relaciona letras con sus sonidos", "Lee palabras sencillas", "Lee oraciones breves", "Comprende información de textos cortos", "Expresa sus ideas de manera oral", "Escribe su nombre de forma convencional", "Escribe palabras y oraciones sencillas", "Utiliza la escritura para comunicar ideas"],
+        "saberes": ["Reconoce y escribe números", "Cuenta colecciones de objetos", "Compara cantidades (más que, menos que, igual que)", "Resuelve sumas sencillas", "Resuelve restas sencillas", "Utiliza estrategias de cálculo mental básico", "Resuelve problemas de la vida cotidiana", "Identifica figuras geométricas básicas"],
+        "etica": ["Reconoce características de su entorno", "Participa en el cuidado del medio ambiente", "Respeta la diversidad de las personas", "Identifica hábitos de cuidado personal", "Valora su comunidad y familia"],
+        "humano": ["Convive respetuosamente con sus compañeros", "Sigue acuerdos y normas del grupo", "Participa en actividades colaborativas", "Expresa emociones de manera adecuada", "Muestra empatía y respeto hacia los demás", "Solicita ayuda cuando la necesita"],
+        "autonomia": ["Cumple con las actividades escolares", "Organiza sus materiales de trabajo", "Sigue instrucciones de manera adecuada", "Muestra interés por aprender", "Trabaja de forma independiente cuando se le solicita"]
+    },
+    "Segundo": {
+        "lenguajes": ["Lee textos breves con fluidez acorde a su grado.", "Comprende información explícita en textos.", "Identifica personajes, lugares y sucesos en lecturas.", "Expresa sus ideas oralmente con claridad.", "Produce oraciones y textos breves con sentido.", "Utiliza mayúsculas y punto en escritos sencillos.", "Participa en conversaciones respetando turnos.", "Muestra interés por la lectura."],
+        "saberes": ["Lee, escribe y compara números.", "Resuelve sumas y restas con diferentes estrategias.", "Utiliza cálculo mental en situaciones cotidianas.", "Resuelve problemas matemáticos sencillos.", "Identifica patrones y secuencias.", "Reconoce figuras geométricas básicas.", "Utiliza unidades de medida convencionales y no convencionales."],
+        "etica": ["Reconoce características de su comunidad.", "Participa en acciones de cuidado ambiental.", "Practica hábitos de higiene y salud.", "Respeta la diversidad de las personas.", "Valora la importancia de la familia y la comunidad."],
+        "humano": ["Convive de manera respetuosa con sus compañeros.", "Participa en actividades colaborativas.", "Expresa emociones de forma adecuada.", "Respeta acuerdos y normas del grupo.", "Muestra empatía y disposición para ayudar.", "Resuelve conflictos mediante el diálogo."],
+        "autonomia": ["Cumple con actividades y tareas escolares.", "Organiza sus materiales de trabajo.", "Sigue instrucciones de manera autónoma.", "Muestra interés y disposición para aprender.", "Persevera ante los retos académicos."]
+    },
+    "Tercer": {
+        "lenguajes": ["Lee de forma fluida y comprende textos acordes a su nivel.", "Identifica la idea principal y detalles en textos escritos.", "Expresa sus ideas y opiniones de forma clara y coherente.", "Redacta textos sencillos con un propósito determinado.", "Utiliza correctamente signos de puntuación y ortografía básica.", "Participa en diálogos y debates respetando otras opiniones.", "Muestra gusto y hábito por la lectura."],
+        "saberes": ["Lee, escribe y ordena números naturales hasta de cuatro cifras.", "Resuelve problemas de suma, resta, multiplicación y división.", "Conoce y utiliza las tablas de multiplicar.", "Resuelve problemas matemáticos de su entorno.", "Identifica y clasifica figuras y cuerpos geométricos.", "Utiliza unidades de medida (longitud, masa, capacidad, tiempo).", "Interpreta información en tablas y gráficas sencillas."],
+        "etica": ["Conoce la historia y características de su comunidad y entidad.", "Valora la diversidad cultural y lingüística de su entorno.", "Participa en acciones para el cuidado del medio ambiente.", "Reconoce sus derechos y responsabilidades como niño(a).", "Practica el respeto y la tolerancia hacia los demás."],
+        "humano": ["Reconoce y expresa sus emociones de manera asertiva.", "Establece relaciones armónicas con sus compañeros.", "Participa activamente en trabajos de equipo.", "Toma decisiones responsables para su bienestar.", "Muestra empatía y solidaridad ante las necesidades de otros.", "Propone soluciones pacíficas a los conflictos."],
+        "autonomia": ["Cumple responsablemente con sus tareas escolares.", "Organiza su tiempo y materiales de estudio.", "Sigue instrucciones y trabaja de forma independiente.", "Muestra iniciativa e interés por aprender cosas nuevas.", "Es perseverante y busca soluciones ante las dificultades."]
+    },
+    "Cuarto": {
+        "lenguajes": ["Comprende e interpreta diversos tipos de textos.", "Expresa ideas, emociones y opiniones de manera clara y coherente.", "Participa en diálogos respetando turnos y escuchando a los demás.", "Identifica y usa recursos literarios y figuras retóricas.", "Produce textos sencillos con organización, coherencia y creatividad.", "Utiliza la escritura para aprender y comunicar información."],
+        "saberes": ["Lee, escribe y compara números naturales y fraccionarios.", "Resuelve operaciones básicas y problemas de multiplicación y división.", "Identifica y usa fracciones en situaciones cotidianas.", "Resuelve problemas aplicando estrategias y procedimientos.", "Usa medidas de longitud, peso, capacidad y tiempo.", "Interpreta y organiza información en tablas, gráficas y pictogramas."],
+        "etica": ["Comprende procesos históricos, geográficos y sociales de su localidad y México.", "Reconoce la importancia del cuidado del medio ambiente.", "Analiza causas y consecuencias de problemas sociales y ambientales.", "Valora la diversidad cultural y el respeto a los derechos humanos.", "Participa en acciones para el bienestar de su comunidad.", "Toma decisiones informadas y responsables."],
+        "humano": ["Reconoce y expresa sus emociones, y practica la empatía.", "Establece relaciones basadas en el respeto y la colaboración.", "Participa en actividades de cuidado personal y de los demás.", "Toma decisiones considerando su bienestar y el de los demás.", "Actúa con autonomía, iniciativa y responsabilidad.", "Propone soluciones a conflictos de manera pacífica."],
+        "autonomia": ["Asume responsabilidades y cumple con sus compromisos escolares.", "Organiza su tiempo y actividades para lograr metas.", "Reconoce sus fortalezas y áreas de oportunidad.", "Persiste ante los retos y no se da por vencido(a).", "Aprende de sus errores y busca mejorar.", "Muestra iniciativa para aprender y colaborar."]
+    },
+    "Quinto": {
+        "lenguajes": ["Comprende, interpreta y explica textos de diversos géneros y formatos.", "Expresa ideas, emociones y argumentos de manera clara, coherente y crítica.", "Participa en diálogos, debates y discusiones respetando turnos y opiniones.", "Produce textos con propósito, estructura, coherencia y creatividad.", "Utiliza recursos lingüísticos y ortográficos para comunicarse eficazmente."],
+        "saberes": ["Resuelve problemas que implican operaciones con números naturales, fracciones, decimales y porcentajes.", "Analiza relaciones de proporcionalidad y variación.", "Resuelve problemas de perímetro, área y volumen.", "Interpreta y representa datos en tablas, gráficas y medidas de tendencia central.", "Aplica estrategias de cálculo mental y escrito en situaciones diversas."],
+        "etica": ["Comprende procesos históricos relevantes de México y del mundo.", "Analiza causas, consecuencias y perspectivas de fenómenos sociales.", "Valora la diversidad cultural y promueve una convivencia respetuosa.", "Reconoce la importancia del cuidado del medio ambiente y la sustentabilidad.", "Participa de manera informada y responsable en su comunidad."],
+        "humano": ["Reconoce y regula sus emociones, y practica la empatía.", "Establece relaciones basadas en el respeto, la equidad y la inclusión.", "Participa en actividades de cuidado personal y colectivo.", "Toma decisiones responsables considerando su bienestar y el de los demás.", "Actúa con autonomía, iniciativa, sentido ético y de justicia."],
+        "autonomia": ["Asume responsabilidades y cumple con sus compromisos escolares.", "Organiza su tiempo y recursos para alcanzar metas personales y académicas.", "Reconoce sus fortalezas, áreas de oportunidad y persevera ante los retos.", "Aprende de sus errores y busca mejorar continuamente.", "Muestra iniciativa, creatividad y disposición para aprender y colaborar."]
+    },
+    "Sexto": {
+        "lenguajes": ["Comprende, interpreta y valora textos de diversos géneros, formatos y contextos.", "Expresa ideas, emociones y argumentos de manera clara, coherente y crítica.", "Participa en diálogos, debates y discusiones argumentadas con respeto y escucha activa.", "Produce textos con estructura, intención, coherencia, creatividad y corrección.", "Utiliza recursos lingüísticos y ortográficos para comunicar con eficacia."],
+        "saberes": ["Resuelve problemas complejos que implican múltiples operaciones y razonamiento conceptual.", "Analiza relaciones de proporcionalidad, variación y estructuras algebraicas sencillas.", "Resuelve problemas de geometría espacial: cálculo de perímetro, áreas, volúmenes y magnitudes.", "Interpreta, organiza y representa datos estadísticos a través de tablas y esquemas probabilísticos.", "Aplica estrategias avanzadas de cálculo mental, estimación y algoritmos escritos en diversos contextos."],
+        "etica": ["Comprende procesos históricos, geográficos y sociales para valorar críticamente su presente.", "Analiza críticamente causas, consecuencias y posibles alternativas ante problemáticas sociales.", "Valora y respeta la diversidad cultural, la interculturalidad crítica y los derechos humanos básicos.", "Reconoce la importancia del desarrollo sustentable, el cuidado del medio ambiente y la biodiversidad.", "Participa de manera informada, democrática, responsable y solidaria en proyectos comunitarios."],
+        "humano": ["Reconoce y regula sus emociones de forma asertiva, practicando activamente la empatía y el respeto.", "Establece relaciones interpersonales sanas basadas en la igualdad de género, la inclusión y la colaboración.", "Participa activamente en actividades de cuidado de la salud integral, autocuidado y vida saludable.", "Toma decisiones responsables y reflexivas considerando su propio bienestar integral y el de su comunidad.", "Actúa con autonomía personal, pensamiento crítico, sentido ético y apego irrestricto a la justicia."],
+        "autonomia": ["Asume compromisos firmes, cumple sus responsabilidades escolares y administra tareas individuales.", "Organiza su tiempo de manera eficiente, optimiza recursos y diseña estrategias efectivas para metas.", "Identifica con honestidad sus fortalezas personales y reconoce áreas de oportunidad para mejora continua.", "Muestra resiliencia frente al error, transformándolo en una fuente de aprendizaje y soluciones creativas.", "Manifiesta iniciativa propia, constancia académica y excelente disposición para el trabajo cooperativo."]
+    }
+};
+
+// Base de Datos de Cierres y Grados Siguientes
+const gradeDetailsDB = {
+    "Primer": {
+        "nextGrade": "SEGUNDO GRADO",
+        "footer": "Al concluir el primer grado de primaria, el alumno(a) muestra avances en los cuatro campos formativos. Continúa su proceso de alfabetización y el desarrollo de habilidades lógico-matemáticas. Reconoce sus emociones, interactúa respetuosamente con sus pares y se reconoce como parte de una comunidad."
+    },
+    "Segundo": {
+        "nextGrade": "TERCER GRADO",
+        "footer": "Al concluir el segundo grado de primaria, el alumno(a) muestra avances significativos en los cuatro campos formativos. Lee y escribe de forma convencional, resuelve operaciones básicas, reconoce su entorno y practica hábitos saludables. Participa con autonomía y respeto en su comunidad escolar y familiar."
+    },
+    "Tercer": {
+        "nextGrade": "CUARTO GRADO",
+        "footer": "Al concluir el tercer grado de primaria, el alumno(a) muestra avances significativos en los cuatro campos formativos. Participa activamente en su aprendizaje, expresa sus ideas, se interesa por conocer y comprender su entorno, convive respetuosamente, colabora con otros y toma decisiones responsables. Continúa desarrollando sus capacidades para aprender a lo largo de la vida y contribuir al bienestar de su comunidad."
+    },
+    "Cuarto": {
+        "nextGrade": "QUINTO GRADO",
+        "footer": "Al concluir el cuarto grado de primaria, el alumno(a) muestra avances significativos en los cuatro campos formativos. Participa activamente en su aprendizaje, expresa sus ideas, se interesa por conocer y comprender su entorno, convive respetuosamente, colabora con otros y toma decisiones responsables. Continúa desarrollando sus capacidades para aprender a lo largo de la vida y contribuir al bienestar de su comunidad."
+    },
+    "Quinto": {
+        "nextGrade": "SEXTO GRADO",
+        "footer": "Al concluir el quinto grado de primaria, el alumno(a) muestra avances significativos en los cuatro campos formativos. Expresa ideas, argumenta y produce textos; resuelve problemas matemáticos en diversas situaciones; comprende su entorno natural y social. Participa responsablemente en su comunidad; reconoce y regula sus emociones, actúa con autonomía, ética y compromiso para construir un México más justo, solidario e inclusivo."
+    },
+    "Sexto": {
+        "nextGrade": "EDUCACIÓN SECUNDARIA",
+        "footer": "Al concluir el sexto grado de primaria, el alumno(a) demuestra avances significativos en el desarrollo integral de los cuatro campos formativos del plan de estudios. Expresa sus ideas, saberes y argumentos con claridad, comprende y valora información relevante desde una mirada analítica, crítica y reflexiva, resuelve retos comunitarios con autonomía, interactúa bajo principios éticos, de empatía y de profundo respeto, participando activamente en su comunidad y reconociéndose plenamente como ciudadano(a) de una sociedad justa, democrática e incluyente."
+    }
+};
